@@ -5,7 +5,7 @@ const maxMoves = 5; // Máximo de movimientos permitidos
 function moverAleatoriamente(btn) {
     if (moveCount >= maxMoves) {
         btn.style.position = "static"; // Deja de moverse
-        btn.textContent = "Ya no puede escapar 😈";
+        btn.textContent = "Ya no puede escapar ";
         return;
     }
     btn.style.position = "absolute";
