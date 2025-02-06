@@ -1,0 +1,85 @@
+/* Variables globales */
+:root {
+    --bg-color: #ffffff; /* Fondo blanco */
+    --text-color: #111;  /* Texto oscuro */
+    --button-bg: #f0f0f0; /* Botones claros */
+    --shadow: 0.5rem 1rem 3rem hsl(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color); /* Fondo blanco */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px;
+}
+
+.container .tenor-gif-embed {
+    display: flex;
+    max-width: 200px;
+}
+
+.container .btn {
+    display: flex;
+    gap: 25px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--button-bg);
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave */
+}
+
+.btn a:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
+    box-shadow: 0.7rem 1.5rem 4rem hsl(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Animación de rebote para botones */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.btn a:hover {
+    animation: bounce 0.5s ease;
+}
+
+/* Diseño responsivo */
+@media (max-width: 600px) {
+    .container {
+        gap: 15px; /* Reducir espacio entre elementos */
+    }
+
+    .btn a {
+        padding: 8px 20px; /* Botones más pequeños */
+        font-size: 0.9rem;
+    }
+
+    .container .tenor-gif-embed {
+        max-width: 150px; /* GIF más pequeño en pantallas pequeñas */
+    }
+}
